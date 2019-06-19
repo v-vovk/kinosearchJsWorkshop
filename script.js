@@ -7,7 +7,7 @@ function apiSearch(event) {
 
     // берем значение инпута
     const searchText = document.querySelector('.form-control').value;
-    const server = 'https://api.themoviedb.org/3/search/multi?api_key=fe4bf1ca4fa9821ac4fd8b2a6d04c2fd&language=ru&query=' + searchText;
+    const server = 'https://api.themo§viedb.org/3/search/multi?api_key=fe4bf1ca4fa9821ac4fd8b2a6d04c2fd&language=ru&query=' + searchText;
     requestApi('GET', server);
 }
 
