@@ -7,7 +7,7 @@ function apiSearch(event) {
 
     // берем значение инпута
     const searchText = document.querySelector('.form-control').value;
-    const server = 'https://api.themo§viedb.org/3/search/multi?api_key=fe4bf1ca4fa9821ac4fd8b2a6d04c2fd&language=ru&query=' + searchText;
+    const server = 'https://api.themoviedb.org/3/search/multi?api_key=fe4bf1ca4fa9821ac4fd8b2a6d04c2fd&language=ru&query=' + searchText;
     requestApi('GET', server);
 }
 
@@ -31,12 +31,14 @@ function requestApi(method, url) {
         }
 
         const output = JSON.parse(request.responseText);
+        console.log(output);
 
         let inner = '';
 
         output.results.forEach(function (item) {
             let nameItem = item.name || item.title;
-            inner += '<div class="col-12">' + nameItem + '</div>';
+            let dateItem = item.release_date || item.first_air_date;
+            inner += '<div class="col-12">' + '<h4>' + nameItem + '</h4>' + '<p>' + dateItem + '</p>' +'</div>';
         });
 
         movie.innerHTML = inner;
