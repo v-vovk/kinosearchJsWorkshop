@@ -3,9 +3,7 @@ const movie = document.querySelector('#movies');
 const urlPoster = 'https://image.tmdb.org/t/p/w500';
 
 function apiSearch(event) {
-    //отмена собития по умолчанию
     event.preventDefault();
-    // берем значение инпута
     const searchText = document.querySelector('.form-control').value;
     const server = 'https://api.themoviedb.org/3/search/multi?api_key=fe4bf1ca4fa9821ac4fd8b2a6d04c2fd&language=ru&query=' + searchText;
     movie.innerHTML = 'Загрузка...';
@@ -35,8 +33,6 @@ function apiSearch(event) {
         });
 }
 
-//по сабмиту визиваэ функцыю
 searchForm.addEventListener('submit', apiSearch);
-
 
 //let posterItem = item.poster_path ? `имагеТМДБорг/t/p/w200/${item.poster_path}` : 'заглушка';
